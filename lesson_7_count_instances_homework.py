@@ -7,30 +7,45 @@ class Animal:
         pass
 
     count = 0
-
     def __init__(self):
-        Animal.count = Animal.count + 1
+        Animal.count += 1
 
+    @staticmethod
+    def get_count():
+        return Animal.count
 
 
 class Animal_one(Animal):
-
     def voice(self):
         print("Привет, я Animal_one")
 
+    def display_count(self):
+        return Animal.get_count()
 
 class Animal_two(Animal):
-
     def voice(self):
         print("Привет, я Animal_two")
 
+    def display_count(self):
+        return Animal.get_count()
+
 
 class Animal_three(Animal):
-
     def voice(self):
         print("Привет, я Animal_three")
 
-a=Animal()
-b=Animal()
-c=Animal()
-print("The number of instances:",Animal.count)
+    def display_count(self):
+        return Animal.get_count()
+
+#Проверить вывод(типа тест):
+
+a = Animal_one()
+a.voice()
+
+b = Animal_two()
+b.voice()
+
+c = Animal_three()
+c.voice()
+
+print("The number of instances:", c.display_count())
