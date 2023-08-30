@@ -30,7 +30,7 @@ class Animal_three(Animal):
     def voice(self):
         print("Привет, я Animal_three")
 
-s1=Animal()
-s2=Animal()
-s3=Animal()
+a=Animal()
+b=Animal()
+c=Animal()
 print("The number of instances:",Animal.count)
