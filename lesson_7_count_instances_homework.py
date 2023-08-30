@@ -33,4 +33,4 @@ class Animal_three(Animal):
 s1=Animal()
 s2=Animal()
 s3=Animal()
-print("The number of students:",Animal.count)
+print("The number of instances:",Animal.count)
