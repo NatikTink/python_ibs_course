@@ -49,3 +49,50 @@ c = Animal_three()
 c.voice()
 
 print("The number of instances:", c.display_count())
+
+#Вариант решения 2(проще и короче):
+
+class Animal:
+
+    def voice(self):
+        pass
+
+    count = 0
+    def __init__(self):
+        Animal.count += 1
+
+    @staticmethod
+    def get_count():
+        return Animal.count
+
+
+class Animal_one(Animal):
+    def voice(self):
+        print("Привет, я Animal_one")
+
+
+class Animal_two(Animal):
+    def voice(self):
+        print("Привет, я Animal_two")
+
+
+
+
+class Animal_three(Animal):
+    def voice(self):
+        print("Привет, я Animal_three")
+
+
+
+#Проверить вывод(типа тест):
+
+a = Animal_one()
+a.voice()
+
+b = Animal_two()
+b.voice()
+
+c = Animal_three()
+c.voice()
+
+print("The number of instances:", Animal.get_count())
