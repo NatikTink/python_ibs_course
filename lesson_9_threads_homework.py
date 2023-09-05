@@ -9,11 +9,13 @@ def rev():
     print(numbers[::-1])
 
 t1=threading.Thread(target = rev)
+print('\nПервый поток начал выполнение!')
 t1.start()
 t1.join()
 print('Первый поток выполнен!')
 
 t2 =threading.Timer(1, rev)
+print('\nВторой поток начал выполнение!')
 t2.start()
 t2.join()
 print("Второй поток выполнен!")
