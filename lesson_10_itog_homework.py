@@ -21,11 +21,11 @@ from selenium.webdriver.common.by import By
 import time
 # инициализируем драйвер браузера. После этой команды вы должны увидеть новое открытое окно браузера
 driver = webdriver.Chrome()
-time.sleep(1)
+time.sleep(2)
 
 # 1. Открыть страницу http://google.com/ncr (Метод get сообщает браузеру, что нужно открыть сайт по указанной ссылке)
 driver.get("http://google.com/ncr")
-time.sleep(1)
+time.sleep(2)
 
 # 2. Выполнить поиск слова “selenide”
 search_field = driver.find_element(By.XPATH, "//textarea[@id='APjFqb']")
@@ -43,13 +43,13 @@ time.sleep(5)
 
 # 4.Перейти в раздел поиска изображений
 search_picture = driver.find_element(By.XPATH, "//span[@class='FMKtTb UqcIvb']")
-time.sleep(20)
+time.sleep(5)
 
-# 5.Проверить, что первое изображение неким образом связано с сайтом selenide.org
-find_pictures = driver.find_elements(By.CLASS_NAME,  'LAA3yd')[0]
+# 5.Проверить, что первое изображение неким образом связано с сайтом selenide.org(на этом шаге я получаю ошибку, но не понимаю почему, все кажется правильным)
+find_pictures = driver.find_elements(By.XPATH,  "//div[@class='LAA3yd']")[0]
 find_pict = find_pictures.text
 assert "selenide.org" in find_pict, "картинка никак не связана с selenide.org"
-time.sleep(2)
+time.sleep(5)
 
 # 6.Вернуться в раздел поиска Все
 driver.back()
