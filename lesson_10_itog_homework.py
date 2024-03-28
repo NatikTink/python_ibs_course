@@ -62,3 +62,8 @@ time.sleep(5)
 
 driver.close()
 driver.quit()
+
+"""
+В будущем командой time.sleep(...) лучше не злоупотреблять, 
+им на замену использовать явное ожидание WebDriverWait (ссылка: https://www.geeksforgeeks.org/waits-in-selenium-python/)
+"""
